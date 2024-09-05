@@ -1,13 +1,17 @@
-import { useWeather } from "../../services/weather/useWeather";
+import { useState } from "react";
+import DashboardBody from "./DashboardBody";
+import DashboardHeader from "./DashboardHeader";
 
 const Dashboard = () => {
-    const { data } = useWeather({
-        cityName: 'Dhaka',
-    });
+    const defaultFilters = {
+        cityName: 'Dhaka'
+    };
+    const [filter, setFilter] = useState(defaultFilters);
 
     return (
-        <div>
-            {JSON.stringify(data) ?? 'Loading'}
+        <div className="bg-red-500">
+            <DashboardHeader filter={filter} onFilterChange={setFilter}/>
+            <DashboardBody filter={filter} />
         </div>
     );
 };

@@ -8,7 +8,7 @@ const instance = axios.create({ baseURL });
 
 instance.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(new ErrorResponse(error.response.data)),
+  (error) => Promise.reject(new ErrorResponse(error.response.data, error)),
 );
 
 const httpService = {
