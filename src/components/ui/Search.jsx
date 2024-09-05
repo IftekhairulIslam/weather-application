@@ -14,7 +14,7 @@ const Search = ({
     <div className='relative'>
       <InputField
         className={twMerge(
-          'pr-2 pl-7 h-[36px] rounded border border-gray-6 w-full bg-transparent text-sm text-gray-6',
+          'pr-2 pl-7 h-[36px] shadow-md rounded w-full bg-transparent text-sm text-gray-6',
           className,
         )}
         type='text'
