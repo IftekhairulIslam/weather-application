@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [filter, setFilter] = useState(defaultFilters);
 
     return (
-        <div className="">
+        <div className="h-full w-full flex flex-col gap-5 p-8">
             <DashboardHeader filter={filter} onFilterChange={setFilter}/>
             <DashboardBody filter={filter} />
         </div>
