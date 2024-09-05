@@ -1,8 +1,10 @@
-import { SunIcon, WindowIcon } from "@heroicons/react/24/outline";
-import { CloudIcon } from "@heroicons/react/24/outline";
-import ThermometerIcon from "../../assets/icons/ThermometerIcon";
-import HumidityIcon from "../../assets/icons/HumidityIcon";
+import { SunIcon } from "@heroicons/react/24/outline";
 import WeatherReportItem from "./WeatherReportItem";
+import CityIcon from "../../assets/icons/CityIcon";
+import TemperatureIcon from "../../assets/icons/TemperatureIcon";
+import WindIcon from "../../assets/icons/WindIcon";
+import DropIcon from "../../assets/icons/DropIcon";
+import CloudIcon from "../../assets/icons/CloudIcon";
 
 /* eslint-disable react/prop-types */
 const WeatherReport = ({ data }) => {
@@ -13,11 +15,11 @@ const WeatherReport = ({ data }) => {
         <h2 className="text-2xl font-semibold">Weather Report</h2>
       </div>
 
-      <WeatherReportItem icon={CloudIcon} title='City' value={data.cityName} />
-      <WeatherReportItem icon={ThermometerIcon} title='Temperature' value={data.temperature} />
-      <WeatherReportItem icon={HumidityIcon} title='Humidity(%)' value={data.humidity} />
-      <WeatherReportItem icon={WindowIcon} title='Wind Speed(m/s)' value={data.windSpeed} />
-      <WeatherReportItem icon={CloudIcon} title='City' value={data.weatherCondition} />
+      <WeatherReportItem icon={CityIcon} title='City' value={data.cityName} />
+      <WeatherReportItem icon={TemperatureIcon} title='Temperature' value={data.temperature} />
+      <WeatherReportItem icon={DropIcon} title='Humidity(%)' value={data.humidity} />
+      <WeatherReportItem icon={WindIcon} title='Wind Speed(m/s)' value={data.windSpeed} />
+      <WeatherReportItem icon={CloudIcon} title='Weather Condition' value={data.weatherCondition} />
     </div>
   );
 };
