@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [filter, setFilter] = useState(defaultFilters);
 
     return (
-        <div className="bg-red-500">
+        <div className="">
             <DashboardHeader filter={filter} onFilterChange={setFilter}/>
             <DashboardBody filter={filter} />
         </div>
