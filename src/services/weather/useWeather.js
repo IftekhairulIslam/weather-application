@@ -3,10 +3,10 @@ import { ENDPOINTS } from "../../configuration/endpoints";
 import weatherService from "./weatherService";
 import Weather from "../../model/Weather";
 
-export const useUsers = (filters) => {
+export const useWeather = (filters) => {
     return useQuery({
       queryKey: [ENDPOINTS.weather, JSON.stringify(filters)],
       queryFn: () => weatherService.getWeather(filters),
-      select: (response) => new Weather(response.data?.data),
+      select: (response) => new Weather(response.data),
     });
 };

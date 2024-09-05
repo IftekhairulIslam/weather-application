@@ -1,10 +1,10 @@
 class Weather {
     constructor(data) {
-        this.cityName = data.cityName;
-        this.temperature = data.temperature;
-        this.humidity = data.humidity;
-        this.windSpeed = data.windSpeed;
-        this.weatherCondition = data.weatherCondition;
+        this.cityName = data?.name;
+        this.temperature = data?.main?.temp;
+        this.humidity = data?.main?.humidity; 
+        this.windSpeed = data?.wind?.speed; 
+        this.weatherCondition = data?.weather?.[0]?.main;
     }
 }
 
