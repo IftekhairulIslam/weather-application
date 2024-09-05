@@ -4,7 +4,7 @@ import DashboardHeader from "./DashboardHeader";
 
 const Dashboard = () => {
     const defaultFilters = {
-        cityName: 'Dhaka'
+        cityName: localStorage.getItem('cityName') ?? '',
     };
     const [filter, setFilter] = useState(defaultFilters);
 

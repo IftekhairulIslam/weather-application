@@ -9,6 +9,7 @@ const DashboardHeader = ({onFilterChange}) => {
         });
       };
     
+      // Debouncing the change to prevent unnecessary api calls
       const debounceSearch = debounce(handleSearchNameChange, 500);
     return (
       <Search onChange={debounceSearch} className='bg-white' placeholder="Search weather report by city name" /> 
