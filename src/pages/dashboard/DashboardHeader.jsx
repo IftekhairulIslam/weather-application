@@ -11,9 +11,7 @@ const DashboardHeader = ({onFilterChange}) => {
     
       const debounceSearch = debounce(handleSearchNameChange, 500);
     return (
-        <div>
-           <Search onChange={debounceSearch} placeholder="Write city name here" /> 
-        </div>
+      <Search onChange={debounceSearch} className='bg-white' placeholder="Search weather report by city name" /> 
     );
 };
 

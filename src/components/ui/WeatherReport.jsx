@@ -7,7 +7,7 @@ import WeatherReportItem from "./WeatherReportItem";
 /* eslint-disable react/prop-types */
 const WeatherReport = ({ data }) => {
   return (
-    <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
+    <div className="bg-white shadow-md rounded-lg p-6">
       <div className="flex items-center mb-4">
         <SunIcon className="h-6 w-6 text-yellow-500 mr-2" />
         <h2 className="text-2xl font-semibold">Weather Report</h2>
