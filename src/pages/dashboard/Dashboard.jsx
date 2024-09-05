@@ -9,9 +9,11 @@ const Dashboard = () => {
     const [filter, setFilter] = useState(defaultFilters);
 
     return (
-        <div className="h-full w-full md:w-[600px] mx-auto flex flex-col gap-5 p-8">
-            <DashboardHeader filter={filter} onFilterChange={setFilter}/>
-            <DashboardBody filter={filter} />
+        <div className="h-full w-full" style={{backgroundImage: 'url(/src/assets/images/background-image.jpg)'}}>
+            <div className="h-full w-full md:w-[600px] mx-auto flex flex-col gap-5 p-8">
+                <DashboardHeader filter={filter} onFilterChange={setFilter}/>
+                <DashboardBody filter={filter} />
+            </div>
         </div>
     );
 };
