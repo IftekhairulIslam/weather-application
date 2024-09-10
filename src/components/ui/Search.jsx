@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 import { twMerge } from 'tailwind-merge';
-import InputField from '../form/InputField';
 import SearchIcon from '../../assets/icons/SearchIcon';
+import InputField from '../form/InputField';
 
 const Search = ({
   name = 'search',

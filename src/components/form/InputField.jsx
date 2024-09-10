@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { twMerge } from 'tailwind-merge';
 
 const InputField = ({ name, onChange, onEnter, className, ...rest }) => {
