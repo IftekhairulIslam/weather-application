@@ -14,7 +14,7 @@ const Search = ({
     <div className='relative'>
       <InputField
         className={twMerge(
-          'pr-2 pl-7 h-[36px] shadow-md rounded w-full bg-transparent text-sm text-gray-6',
+          'pr-3 pl-11 h-[42px] shadow-md rounded w-full text-label text-gray-6',
           className,
         )}
         type='text'
@@ -24,7 +24,7 @@ const Search = ({
       />
       <SearchIcon
         className={twMerge(
-          'absolute top-[10px] left-2 stroke-gray-6 pointer-events-none',
+          'absolute top-[13px] left-5 stroke-gray-6 pointer-events-none',
           iconClassName,
         )}
       />
