@@ -6,14 +6,14 @@ This is a simple weather update application. Get weather update by any city name
 [Weather Application](https://weather-for-you-today.netlify.app/)
 
 
-## Run development Version:
+## Run Development Version:
 ```bash
 - `yarn install`
 - `yarn run dev`
 ```
 
 
-## How Production Version:
+## Run Production Version:
 ```bash
 - `yarn install`
 - `yarn run build`
