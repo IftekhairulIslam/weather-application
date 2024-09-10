@@ -8,14 +8,14 @@ This is a simple weather update application. Get weather update by any city name
 
 ## Run Development Version:
 ```bash
-- `yarn install`
-- `yarn run dev`
+$ yarn install
+$ yarn run dev
 ```
 
 
 ## Run Production Version:
 ```bash
-- `yarn install`
-- `yarn run build`
-- `yarn run preview`
+$ yarn install
+$ yarn run build
+$ yarn run preview
 ```
