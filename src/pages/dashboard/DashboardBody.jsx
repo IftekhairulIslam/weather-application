@@ -5,7 +5,7 @@ import WeatherReport from '../../components/ui/WeatherReport';
 import { useWeather } from '../../hooks/useWeather';
 
 const DashboardBody = ({ filter }) => {
-  const { data, isFetching, error, refetch, isFetched } = useWeather(filter);
+  const { data, isFetching, error, refetch } = useWeather(filter);
 
   // This will trigger whenever filter is changed
   useEffect(() => {
@@ -13,15 +13,16 @@ const DashboardBody = ({ filter }) => {
   }, [refetch, filter]);
 
   // Save the name of the last searched city
-  if (isFetched && !isFetching && !error && data) {
+  if (data) {
     filter.cityName && localStorage.setItem('cityName', filter.cityName);
   }
 
+  if (isFetching) return <LoadingSpinner />;
+  if (error) return <PageError message={error.message} />;
+
   return (
     <div className='flex-1 flex flex-col'>
-      {isFetching && <LoadingSpinner />}
-      {error && <PageError message={error.message} />}
-      {data && !error && !isFetching && <WeatherReport data={data} />}
+      {data && <WeatherReport data={data} />}
     </div>
   );
 };
