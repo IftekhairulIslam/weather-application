@@ -2,20 +2,23 @@ import { useEffect } from 'react';
 import LoadingSpinner from '../../components/ui/LoadingSpinner';
 import PageError from '../../components/ui/PageError';
 import WeatherReport from '../../components/ui/WeatherReport';
+import { useHistoryContext } from '../../context/historyContext';
 import { useWeather } from '../../hooks/useWeather';
 
 const DashboardBody = ({ filter }) => {
-  const { data, isFetching, error, refetch } = useWeather(filter);
+  const { addHistory } = useHistoryContext();
+  const updateHistory = (data) => addHistory(data.cityName);
+
+  const { data, isFetching, error, refetch } = useWeather(
+    filter,
+    updateHistory,
+  );
 
   // This will trigger whenever filter is changed
   useEffect(() => {
-    refetch();
+    refetch(filter, updateHistory);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refetch, filter]);
-
-  // Save the name of the last searched city
-  if (data) {
-    filter.cityName && localStorage.setItem('cityName', filter.cityName);
-  }
 
   if (isFetching) return <LoadingSpinner />;
   if (error) return <PageError message={error.message} />;

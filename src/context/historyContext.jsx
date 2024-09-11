@@ -14,21 +14,19 @@ export const useHistoryContext = () => {
 
 const HistoryProvider = ({ children }) => {
   const [history, setHistory] = useState(
-    localStorage.getItem('history') || [
-      'Dhaka',
-      'Mumbai',
-      'Chennai',
-      'Kolkata',
-      'Delhi',
-      'Bangalore',
-    ],
+    JSON.parse(localStorage.getItem('history')) || [],
   );
 
   const addHistory = (cityName) => {
     // Updating the history
-    const updatedHistory = [cityName, ...history.slice(0, 9)];
+    const updatedHistory = Array.from(
+      new Set([cityName, ...history.slice(0, 9)]),
+    );
     setHistory(updatedHistory);
     localStorage.setItem('history', JSON.stringify(updatedHistory));
+
+    // Save the name of the last searched city
+    cityName && localStorage.setItem('cityName', cityName);
   };
 
   const contextValue = { history, addHistory };
