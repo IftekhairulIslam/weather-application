@@ -1,18 +1,8 @@
 import SearchHistory from '../../components/ui/search-history/SearchHistory';
+import { useHistoryContext } from '../../context/historyContext';
 
 const DashboardHistory = ({ onFilterChange }) => {
-  //TODO: this will come from localStorage
-  const history = [
-    'London',
-    'Paris',
-    'Berlin',
-    'Tokyo',
-    'New York',
-    'Moscow',
-    'Sao Paulo',
-    'Bangkok',
-    'Sydney',
-  ];
+  const { history } = useHistoryContext();
 
   const handleHistoryClick = (city) => {
     onFilterChange({ cityName: city });
