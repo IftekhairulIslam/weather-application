@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DashboardBody from './DashboardBody';
 import DashboardHeader from './DashboardHeader';
+import DashboardHistory from './DashboardHistory';
 
 const Dashboard = () => {
   const defaultFilters = {
@@ -9,8 +10,10 @@ const Dashboard = () => {
   const [filter, setFilter] = useState(defaultFilters);
 
   return (
-    <div className='h-dvh transition-all w-full bg-[url(@/assets/images/background-image.jpg)] bg-cover'>
-      <div className='h-full w-full md:w-[600px] mx-auto flex flex-col gap-5 p-8'>
+    <div className='flex flex-col-reverse md:flex-row gap-8 p-8 transition-all w-full h-full overflow-auto'>
+      <DashboardHistory onFilterChange={setFilter} />
+
+      <div className='flex-1 h-full flex flex-col gap-5'>
         <DashboardHeader filter={filter} onFilterChange={setFilter} />
         <DashboardBody filter={filter} />
       </div>

@@ -9,8 +9,8 @@ import WeatherReportItem from './WeatherReportItem';
 const WeatherReport = ({ data }) => {
   return (
     <div className='bg-white shadow-md rounded p-5 py-4'>
-      <div className='flex items-center mb-4'>
-        <SunIcon className='h-6 w-6 text-yellow-500 mr-2' />
+      <div className='flex items-center gap-3 py-3'>
+        <SunIcon className='h-6 w-6' />
         <h2 className='text-2xl font-semibold'>Weather Report</h2>
       </div>
 
