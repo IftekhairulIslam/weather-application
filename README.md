@@ -3,7 +3,7 @@ This is a simple weather update application. Get weather update by any city name
 
 
 ## Live Demo
-[Weather Application](https://weather-application.netlify.app/)
+[Weather Application](https://weather-application-mii.netlify.app/)
 
 
 ## Run Development Version:
